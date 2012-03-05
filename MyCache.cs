@@ -5,14 +5,14 @@ using System.Text;
 
 namespace TinyThreadSafeCache
 {
-    sealed class MyCache : TinyThreadSafeCache<MyTypeToCache>
+    sealed class MyCache
     {
         //singleton private instance
-        private static readonly MyCache _instance = new MyCache();
+        private static readonly TinyThreadSafeCache<MyTypeToCache> _instance = new TinyThreadSafeCache<MyTypeToCache>();
 
         private MyCache() { } // Make sure only us can call constructor
 
-        public static MyCache Instance
+        public static TinyThreadSafeCache<MyTypeToCache> Instance
         {
             get
             {
